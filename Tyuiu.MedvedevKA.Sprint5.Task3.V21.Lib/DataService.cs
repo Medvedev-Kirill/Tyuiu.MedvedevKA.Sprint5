@@ -16,13 +16,13 @@ namespace Tyuiu.MedvedevKA.Sprint5.Task3.V21.Lib
         {
             string path = $@"{Directory.GetCurrentDirectory()}\OutPutFileTask3.bin";
 
-            double res = ((double)Math.Pow(x, 2) + 1) / (double)Math.Sqrt(4 * Math.Pow(x, 2) - 3);
+            double y = ((double)Math.Pow(x, 2) + 1) / (double)Math.Sqrt(4 * Math.Pow(x, 2) - 3);
 
-            res = Math.Round(res, 3);
+            y = Math.Round(y, 3);
 
             using (BinaryWriter writer = new BinaryWriter(File.Open(path, FileMode.OpenOrCreate), Encoding.UTF8))
             {
-                writer.Write(BitConverter.GetBytes(res));
+                writer.Write(BitConverter.GetBytes(y));
             }
 
             return path;
